@@ -1,0 +1,370 @@
+/* Reset e Definições Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    background-color: #f4f4f4;
+    padding-top: 80px;
+}
+
+/* Carrossel */
+#carrossel {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Ajuste para que o carrossel ocupe toda a altura visível */
+    overflow: hidden;
+}
+
+.carrossel-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Oculta as imagens fora da área visível */
+}
+
+.carrossel-slide {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    width: 300%; /* Ajustado para 3 imagens */
+    height: 600px;
+}
+
+.carrossel-slide img {
+    width: 100%;
+    height: 600px; /* Garante que a imagem ocupe a altura do carrossel */
+    object-fit: cover; /* Ajusta a imagem para preencher a área sem distorções */
+    flex-shrink: 0; /* Cada imagem ocupa 100% do espaço visível */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    position: fixed; /* Fixa a barra no topo da página */
+    top: 0;          /* Alinha ao topo */
+    left: 0;         /* Alinha à esquerda */
+    width: 100%;     /* Garante que a barra ocupe toda a largura */
+    z-index: 1000;   /* Garante que fique sobre outros elementos */
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra para destaque */
+    height: 90px;
+}
+
+.navbar .logo img{
+    width: 160px;
+    height: 60px;
+    max-width: 160px; /* Limita a largura máxima da logo */
+}
+
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar .menu li a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.0em;
+    transition: color 0.3s ease;
+    padding: 10px 15px;
+}
+
+.navbar .menu li a:hover {
+    color: gray;
+}
+
+/* Seções */
+section {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Sobre Nós */
+#sobre-nos {
+    background-color:  #f4f4f4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: -50px;
+    z-index: 1;
+    padding: 50px 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra para destaque */
+}
+
+
+#sobre-nos p {
+    font-size: 1.0em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Contato */
+#contato {
+    background-color: #d7d7d7;
+    padding: 50px 20px;
+}
+
+#contato p {
+    font-size: 1.0em;
+    color: #555;
+}
+
+#contato p strong {
+    color: #000;
+}
+
+/* Rodapé */
+#rodape {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    
+}
+
+#rodape p {
+    font-size: 1.0em;
+}
+/* Estilo para os botões de navegação */
+.navegacao {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1.0em;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.navegacao:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#anterior {
+    left: 1.4em;
+}
+
+#proximo {  
+    right: 1.4em;
+}
+/* Estilo geral da seção de produtos */
+.produtos {
+    padding: 50px 20px;
+    background-color: #f8f9fa; /* Fundo claro para destacar a seção */
+    text-align: center;
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;;
+}
+
+.produtos h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Layout da lista de produtos */
+.produtos-lista {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite ajustar em telas menores */
+}
+
+/* Cada produto */
+.produto {
+    flex: 1 1 calc(33.33% - 20px); /* Três colunas, ajusta com o gap */
+    max-width: 300px; /* Limite de largura */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produto:hover {
+    transform: translateY(-5px); /* Elevação no hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagem do produto */
+.produto img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Títulos dos produtos */
+.produto h3 {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Descrição do produto */
+.produto p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
+
+.icon-whatsapp {
+    width: 20px; /* Tamanho do ícone */
+    height: 20px; /* Altura do ícone */
+    margin-right: 5px; /* Espaçamento ao lado do ícone */
+    vertical-align: middle; /* Alinha o ícone ao texto */
+}
+
+/* Estilo para o link do WhatsApp */
+.telefone {
+    color: #25d366; /* Verde do WhatsApp */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-size: 1.0em; /* Tamanho do texto */
+    position: relative; /* Necessário para o efeito */
+    margin-right: 10px;
+}
+
+/* Substitui o sublinhado com uma linha personalizada */
+.telefone::after {
+    content: ""; /* Pseudo-elemento vazio para a linha */
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Espaçamento abaixo do texto */
+    width: 100%; /* Tamanho da linha igual ao texto */
+    height: 2px; /* Espessura da linha */
+    background-color: #25d366; /* Cor da linha */
+    transform: scaleX(0); /* Inicialmente escondido */
+    transform-origin: left; /* Animação começa da esquerda */
+    transition: transform 0.3s ease-in-out; /* Suavidade */
+}
+
+/* Aplica o efeito ao passar o mouse */
+.telefone:hover::after {
+    transform: scaleX(1); /* Expande a linha no hover */
+}
+
+/* Estilo do link de e-mail */
+.email {
+    color: #172049; /* Cor azul característica de links */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-size: 1.0em; /* Tamanho do texto */
+    position: relative; /* Necessário para o efeito */
+}
+
+/* Substitui o sublinhado com uma linha personalizada */
+.email::after {
+    content: ""; /* Cria o sublinhado com pseudo-elemento */
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Espaçamento abaixo do texto */
+    width: 100%; /* Tamanho da linha igual ao texto */
+    height: 2px; /* Espessura da linha */
+    background-color: #172049; /* Cor azul do sublinhado */
+    transform: scaleX(0); /* Inicialmente escondido */
+    transform-origin: left; /* Expande a partir da esquerda */
+    transition: transform 0.3s ease-in-out; /* Suavidade */
+}
+
+/* Aplica o efeito ao passar o mouse */
+.email:hover::after {
+    transform: scaleX(1); /* Expande a linha no hover */
+}
+
+/* Estilo da seção de contato */
+.contato-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* Fundo leve para destacar */
+}
+
+.contato-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333; /* Cor escura para o título */
+}
+
+/* Estilo dos ícones de contato */
+.contato-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Espaço entre os itens */
+    flex-wrap: wrap; /* Ajusta em dispositivos menores */
+}
+
+/* Links de contato */
+.contato-link {
+    display: flex;
+    flex-direction: column; /* Ícone acima do texto */
+    align-items: center;
+    text-decoration: none; /* Remove sublinhado */
+    color: #333; /* Cor do texto */
+    transition: transform 0.3s ease, color 0.3s ease; /* Efeitos no hover */
+}
+
+.contato-link:hover {
+    transform: scale(1.1); /* Aumenta ligeiramente no hover */
+    color: #172049; /* Destaque no hover */
+}
+
+/* Estilo das imagens */
+.contato-imagem {
+    width: 60px; /* Tamanho das imagens */
+    height: 60px;
+    margin-bottom: 10px; /* Espaço entre imagem e texto */
+    transition: transform 0.3s ease; /* Efeito suave no hover */
+}
+
+.contato-link:hover .contato-imagem {
+    transform: scale(1.2); /* Destaca o ícone no hover */
+}
+ 
+.whatsapp-link {
+    position: fixed; /* Fixa o link na tela */
+    bottom: 20px; /* Distância do fundo */
+    right: 20px; /* Distância da direita */
+    background-color: #25D366; /* Cor de fundo do botão, o verde do WhatsApp */
+    border-radius: 50%; /* Deixa o ícone redondo */
+    padding: 15px; /* Espaço ao redor do ícone */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar destaque */
+    transition: transform 0.3s ease; /* Efeito de transformação */
+}
+
+.whatsapp-link:hover {
+    transform: scale(1.1); /* Aumenta ligeiramente o botão no hover */
+}
+
+.whatsapp-link img {
+    width: 35px; /* Tamanho do ícone */
+    height: 35px;
+}
+
